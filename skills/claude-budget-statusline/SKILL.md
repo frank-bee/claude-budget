@@ -25,7 +25,7 @@ node -v
 Require `v18` or later. If Node is missing or too old, tell the user to install Node.js first
 (e.g. via `nvm` or their OS package manager) and stop — do not proceed.
 
-## 2. Install the CLI
+## 2. Install the CLI (and pre-warm ccusage)
 
 ```bash
 npm install -g claude-budget-statusline
@@ -34,6 +34,18 @@ claude-budget-statusline --help
 
 If the global install fails on permissions, suggest `nvm`/a user-owned Node install rather than
 `sudo npm install -g`.
+
+`claude-budget-statusline` shells out to [`ccusage`](https://github.com/ryoppippi/ccusage) via
+`npx ccusage@latest` on every `refresh`/`calibrate` — it is **not** a package dependency, so it
+isn't installed by the `npm install` above. `npx` fetches and caches it the first time it's
+invoked, which can take a few seconds. Pre-warm it now so step 5's `refresh` is fast:
+
+```bash
+npx --yes ccusage@latest --version
+```
+
+If this fails (no network, npx broken), fix that before continuing — the CLI can't compute spend
+without it.
 
 ## 3. Find (or create) the statusline
 

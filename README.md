@@ -29,7 +29,7 @@ existing old python `budget` setup, and walks you through calibrating to your re
 
 ## Manual install
 
-Requires Node.js ≥18 (also used to run `ccusage` via `npx`). Zero other dependencies.
+Requires Node.js ≥18. Zero package dependencies of its own.
 
 ```bash
 # Persistent — puts `claude-budget-statusline` on your PATH (recommended for the statusline):
@@ -38,6 +38,11 @@ npm install -g claude-budget-statusline
 # Or run ad-hoc without installing:
 npx claude-budget-statusline --help
 ```
+
+**Note:** `ccusage` is *not* bundled or installed by the above — `claude-budget-statusline` shells
+out to `npx ccusage@latest` on every `refresh`/`calibrate` call. `npx` downloads and caches it
+automatically the first time it runs, which can take a few seconds; after that it's cached. To
+pre-warm it yourself: `npx --yes ccusage@latest --version`.
 
 ## Usage
 
