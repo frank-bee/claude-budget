@@ -1,0 +1,25 @@
+{
+  "name": "claude-budget-statusline",
+  "version": "0.1.0",
+  "description": "Configurable Claude spend readout for the Claude Code statusline, calibrated against your real bill.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Frank Bernhardt",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "claude-budget-statusline": "src/cli.js"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frank-bee/claude-budget.git"
+  },
+  "homepage": "https://github.com/frank-bee/claude-budget"
+}

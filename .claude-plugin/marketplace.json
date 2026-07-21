@@ -1,0 +1,20 @@
+{
+  "name": "claude-budget-marketplace",
+  "owner": {
+    "name": "Frank Bernhardt"
+  },
+  "plugins": [
+    {
+      "name": "claude-budget",
+      "source": "./",
+      "description": "Install and wire the claude-budget-statusline CLI into your Claude Code statusline, calibrated against your real Anthropic bill",
+      "strict": false,
+      "keywords": ["statusline", "budget", "ccusage", "spend", "billing"],
+      "skills": ["./skills/claude-budget-statusline"]
+    }
+  ],
+  "metadata": {
+    "description": "Marketplace for the claude-budget-statusline skill",
+    "version": "0.1.0"
+  }
+}
